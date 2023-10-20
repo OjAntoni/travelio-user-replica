@@ -31,7 +31,8 @@ public class UserEventsListener {
             User updatedUser = objectMapper.readValue(message.getBody(String.class), User.class);
             userRepository.save(updatedUser);
         } else if("USER_DELETED".equals(messageType)) {
-
+            User updatedUser = objectMapper.readValue(message.getBody(String.class), User.class);
+            userRepository.save(updatedUser);
         }
         // ... so on
     }
